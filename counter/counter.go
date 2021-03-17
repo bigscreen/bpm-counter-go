@@ -17,6 +17,8 @@ const (
 	timeoutBufferDuration = 5 * time.Millisecond
 
 	beatConstraint = 4
+
+	divider = "------------------------------"
 )
 
 func Start() {
@@ -25,6 +27,7 @@ func Start() {
 }
 
 func showInstructions() {
+	fmt.Println(divider)
 	fmt.Println("- Press <space> to start and input the beat sample")
 	fmt.Println("- Press <q> to back to menu")
 }
@@ -38,6 +41,7 @@ func startCounter() {
 		c, err := getInputASCIICode()
 		if err != nil {
 			fmt.Println("Error, ", err.Error())
+			fmt.Println(divider)
 			return
 		}
 
@@ -57,7 +61,7 @@ func startCounter() {
 				}
 			}
 		case asciiCodeQUppercase, asciiCodeQLowercase:
-			fmt.Println("Bye bye")
+			fmt.Println(divider)
 			return
 		}
 	}
@@ -95,4 +99,5 @@ func showResults(b int32) {
 	fmt.Print("\n")
 	fmt.Printf("Beat Per 15 seconds = %d\n", b)
 	fmt.Printf("Beat Per Minute = %d\n", (60/timeoutInSeconds)*b)
+	fmt.Println(divider)
 }

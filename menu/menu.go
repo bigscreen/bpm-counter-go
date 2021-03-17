@@ -18,10 +18,11 @@ const (
 )
 
 func Show() {
-	fmt.Println("Welcome to BPM counter")
+	fmt.Println("BPM counter")
+	fmt.Println("Select one of the options:")
 	fmt.Println("(s) Start")
 	fmt.Println("(q) Quit")
-	fmt.Print("Select option (s/q)? ")
+	fmt.Print("your option (s/q)? ")
 	startCLIInput()
 }
 
