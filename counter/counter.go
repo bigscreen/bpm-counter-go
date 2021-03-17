@@ -26,7 +26,7 @@ func Start() {
 
 func showInstructions() {
 	fmt.Println("- Press <space> to start and input the beat sample")
-	fmt.Println("- Press <q> to quit")
+	fmt.Println("- Press <q> to back to menu")
 }
 
 func startCounter() {

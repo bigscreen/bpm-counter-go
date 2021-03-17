@@ -1,12 +1,9 @@
 package main
 
 import (
-	"fmt"
-
-	"github.com/bigscreen/bpm-counter-go/counter"
+	"github.com/bigscreen/bpm-counter-go/menu"
 )
 
 func main() {
-	fmt.Println("Welcome to BPM counter")
-	counter.Start()
+	menu.Show()
 }
