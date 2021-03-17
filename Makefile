@@ -1,5 +1,5 @@
 APP=bpm-counter
-ALL_PACKAGES=$(shell go list ./...)
+ALL_PACKAGES=$(shell go list ./... | grep -v "vendor")
 
 APP_EXECUTABLE="./out/$(APP)"
 
@@ -23,12 +23,3 @@ compile: clean
 
 run: compile
 	$(APP_EXECUTABLE)
-
-install-gotest:
-	GO111MODULE=off go get github.com/rakyll/gotest
-
-test: install-gotest
-	GO111MODULE=on gotest -p=1 -mod=readonly $(UNIT_TEST_PACKAGES)
-
-test-cov: install-gotest
-	GO111MODULE=on gotest -p=1 -mod=readonly -covermode=count -coverprofile=out/coverage.cov $(UNIT_TEST_PACKAGES)
